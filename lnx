@@ -10,12 +10,14 @@ fi
 if [ "$(docker ps --filter name=^lnx$ --format="{{.Names}}")" = "" ]; then
   docker run \
     -d \
-    --publish-all \
     --pid=host \
-    --network=host \
+    --publish 80 \
+    --publish 8080 \
+    --publish 5900 \
     --name lnx -h lnx \
     --volume "$HOME:/$HOME" \
     --volume /var/run/docker.sock:/var/run/docker.sock \
+    --volume /dev/shm:/dev/shm \
     lnx \
     tail -f /dev/null > /dev/null
 fi
