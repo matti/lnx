@@ -11,6 +11,7 @@ if [ "$(docker ps --filter name=lnx --format="{{.Names}}")" = "" ]; then
   docker run \
     -d \
     --publish-all \
+    --pid=host \
     --name lnx -h lnx \
     --volume "$HOME:/$HOME" \
     --volume /var/run/docker.sock:/var/run/docker.sock \
