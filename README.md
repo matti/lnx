@@ -1,6 +1,6 @@
 # lnx
 
-a wrapper start docker in your shell with your files *now*
+a wrapper to start docker in your shell with your files *now*
 
 ![screencast](screencast.gif)
 
