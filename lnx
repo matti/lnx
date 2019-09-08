@@ -8,7 +8,14 @@ else
 fi
 
 if [ "$(docker ps --filter name=lnx --format="{{.Names}}")" = "" ]; then
-  docker run -d --name lnx -h lnx --volume "$HOME:/$HOME" lnx tail -f /dev/null >/dev/null
+  docker run \
+    -d \
+    --publish-all \
+    --name lnx -h lnx \
+    --volume "$HOME:/$HOME" \
+    --volume /var/run/docker.sock:/var/run/docker.sock \
+    lnx \
+    tail -f /dev/null > /dev/null
 fi
 
 docker exec -it --privileged -w "/$(pwd)" -e "HOME=$HOME" lnx $cmd

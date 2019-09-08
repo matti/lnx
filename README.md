@@ -27,6 +27,11 @@ Resume the session:
     myfolder $ lnx
     root@lnx:~/myfolder# htop
 
+Start all over:
+
+    $ docker rm -f lnx
+    $ lnx
+
 Snapshot your state:
 
     $ docker commit lnx lnx-with-htop
