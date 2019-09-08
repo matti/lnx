@@ -35,4 +35,4 @@ Restore the snapshot:
 
     $ docker tag lnx-with-htop lnx
     $ lnx
-    $ htop
+    root@lnx:/# htop
