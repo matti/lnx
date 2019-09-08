@@ -11,4 +11,4 @@ if [ "$(docker ps --filter name=lnx --format="{{.Names}}")" = "" ]; then
   docker run -d --name lnx -h lnx --volume "$HOME:/$HOME" lnx tail -f /dev/null >/dev/null
 fi
 
-docker exec -it --privileged -w "/$(pwd)" -e "HOME=$HOME" lnx "$cmd"
+docker exec -it --privileged -w "/$(pwd)" -e "HOME=$HOME" lnx $cmd
