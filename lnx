@@ -12,4 +12,3 @@ if [ "$(docker ps --filter name=lnx --format="{{.Names}}")" = "" ]; then
 fi
 
 docker exec -it --privileged -w "/$(pwd)" -e "HOME=$HOME" lnx "$cmd"
-docker commit lnx lnx >/dev/null 2>&1
