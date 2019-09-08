@@ -11,7 +11,7 @@ a wrapper to start docker in your shell with your files *now*
 
 ## usage
 
-files are mapped from the host
+Files are mapped from your host and all state is persisted:
 
     $ cd myfolder
     myfolder $ pwd
@@ -22,7 +22,7 @@ files are mapped from the host
     root@lnx:~/myfolder# apt-get update && apt-get install -y htop
     root@lnx:~/myfolder# exit
 
-resume session:
+Resume the session:
 
     myfolder $ lnx
     root@lnx:~/myfolder# htop
@@ -31,7 +31,7 @@ Snapshot your state:
 
     $ docker commit lnx lnx-with-htop
 
-Restore snapshot:
+Restore the snapshot:
 
     $ docker tag lnx-with-htop lnx
     $ lnx
