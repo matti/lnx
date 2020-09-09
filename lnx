@@ -2,7 +2,7 @@
 set -euo pipefail
 
 if [ "${1:-}" = "" ]; then
-  cmd="bash"
+  cmd="sh"
 else
   cmd="$*"
 fi
